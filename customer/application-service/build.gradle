@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+}
+
+group = 'org.wangyang.customer'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation project(':domain')
+	implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.3'
+	implementation group: 'org.springframework', name: 'spring-context', version: '5.3.3'
+	compileOnly 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
